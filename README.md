@@ -1,1 +1,1 @@
-# PopularMovies Udacity Android Nanodegree
+# Popular Movies Udacity Android Nanodegree
