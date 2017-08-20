@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">Popular Movies</string>
+    <string name="title_activity_movie_details" translatable="false">MovieDetails</string>
+    <string name="favorite_star" translatable="false">star</string>
+    <string name="title_activity_review_activiy" translatable="false">ReviewActiviy</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="action_favorites">Favorites</string>
+    <string name="action_top_rated">Top Rated</string>
+    <string name="action_populars">Most Popular</string>
+    <string name="error_no_server_responce">Ops, something bad happened.\nCheck your internet connection and swipe down to refresh</string>
+    <string name="error_movie_details">Unexpected error occurred, please check your internet connection and try again</string>
+    <string name="movieDetails">Release Date: %1$s\n\nLanguage: %2$s\n\nAvarage Rating: %3$s</string>
+    <string name="noImage">No Image</string>
+    <string name="reviews">Reviews</string>
+    <string name="trailers">Trailers</string>
+    <string name="review">"Review: "</string>
+    <string name="link" translatable="false">Link</string>
+    <string name="noInternet">Internet connection is not available, check your connectivity and try again</string>
+    <string name="noFavorites">You don\'t have favourite movies</string>
+    <string name="movieKey" translatable="false">movie</string>
+    <string name="typeKey" translatable="false">type</string>
+    <string name="positionKey" translatable="false">pos</string>
+    <string name="moviesPopularKey" translatable="false">moviesPopular</string>
+    <string name="moviesTopRatedKey" translatable="false">moviesTopRated</string>
+    <string name="moviesFavoritesKey" translatable="false">moviesFavorites</string>
+    <string name="sortTypeKey" translatable="false">sortType</string>
+    <string name="errorMessageKey">errorMessage</string>
+</resources>

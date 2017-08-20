@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Filmes Populares</string>
+
+    <string name="action_settings">Definições</string>
+    <string name="action_favorites">Favoritos</string>
+    <string name="action_top_rated">Melhor Classificados</string>
+    <string name="action_populars">Mais populares</string>
+    <string name="error_no_server_responce">Ops, algo de errado aconteceu,\nverifique o estado da Internet e deslize para baixo para actualizar</string>
+    <string name="error_movie_details">Ocorreu um erro inesperado, por favor verifique a sua ligação à Internet </string>
+    <string name="movieDetails" >Data de lançamento: %1$s\n\nIdioma: %2$s\n\nAvaliação: %3$s</string>
+    <string name="noImage">Sem imagem</string>
+    <string name="noInternet">A ligação à Internet não está disponível, verifique a sua conectividade e tente novamente</string>
+    <string name="noFavorites">Não tem nenhum filme marcado como favorito</string>
+    <string name="reviews">Comentários :</string>
+    <string name="trailers">Trailers</string>
+    <string name="review">"Comentário : "</string>
+</resources>

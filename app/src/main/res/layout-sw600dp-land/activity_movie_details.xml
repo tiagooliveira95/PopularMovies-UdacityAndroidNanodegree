@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/detailsRefresher"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:baselineAligned="false"
+        android:orientation="horizontal">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/iv_details_bg"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:scaleType="centerCrop"
+                android:visibility="gone"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/coverNoImageError"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="#eee"
+                android:gravity="center"
+                android:text="@string/noImage"
+                android:textSize="22sp"
+                android:visibility="gone"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/cover_bg_details"
+                android:layout_width="0dp"
+                android:layout_height="231dp"
+                android:scaleType="centerCrop"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="@+id/view"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:src="@drawable/poster_placeholder" />
+
+            <View
+                android:id="@+id/view"
+                android:layout_width="0dp"
+                android:layout_height="231dp"
+                android:alpha="0.3"
+                android:background="#000000"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <include
+                android:id="@+id/posterIv"
+                layout="@layout/popular_movies_poster_details_iv"
+                android:layout_width="70dp"
+                android:layout_height="100dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="184dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/cover_bg_details" />
+
+            <TextView
+                android:id="@+id/posterNoImageError"
+                android:layout_width="70dp"
+                android:layout_height="100dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:background="#eee"
+                android:gravity="center"
+                android:text="@string/noImage"
+                android:visibility="invisible"
+                app:layout_constraintLeft_toLeftOf="@+id/posterIv"
+                app:layout_constraintTop_toTopOf="@+id/posterIv" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/trailer_recycler"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="@+id/view"
+                app:layout_constraintRight_toRightOf="@+id/view"
+                app:layout_constraintTop_toBottomOf="@+id/posterNoImageError" />
+
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/txt_movie_details"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="16dp"
+                android:text="this is some random text about some random movie made by some random studio in a random location by some random guy, this is some random text this is some random textthis is some random text this is some random text this is some random text\nthis is some random text this is some random text this is some random text\nthis is some random text this is some random text this is some random text\n "
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintLeft_toLeftOf="@+id/txt_movie_title"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_movie_title" />
+
+            <TextView
+                android:id="@+id/extraMovieDetails"
+                android:layout_width="0dp"
+                android:layout_height="76dp"
+                android:layout_below="@id/txt_movie_details"
+                android:layout_marginTop="8dp"
+                android:paddingEnd="10dp"
+                android:paddingRight="10dp"
+                android:paddingStart="10dp"
+                android:textSize="12sp"
+                app:layout_constraintLeft_toLeftOf="@+id/txt_movie_details"
+                app:layout_constraintRight_toRightOf="@+id/txt_movie_details"
+                app:layout_constraintTop_toBottomOf="@+id/txt_movie_details"
+                tools:text="Release date 22/02/2019" />
+
+            <TextView
+                android:id="@+id/txt_movie_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:maxLines="1"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Random Movie" />
+
+
+            <ProgressBar
+                android:id="@+id/loadingProgressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toRightOf="@+id/review_recycler" />
+
+            <TextView
+                android:id="@+id/txt_Movie_details_error"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:background="#eee"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="@string/error_movie_details"
+                android:visibility="invisible"
+                app:layout_constraintLeft_toLeftOf="@+id/txt_movie_details"
+                app:layout_constraintRight_toRightOf="@+id/extraMovieDetails"
+                app:layout_constraintHorizontal_bias="0.0"
+                android:layout_marginTop="32dp"
+                app:layout_constraintTop_toBottomOf="@+id/extraMovieDetails" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/review_recycler"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintBottom_toBottomOf="@+id/loadingProgressBar"
+                app:layout_constraintLeft_toLeftOf="@+id/extraMovieDetails"
+                app:layout_constraintRight_toRightOf="@+id/extraMovieDetails"
+                app:layout_constraintTop_toBottomOf="@+id/extraMovieDetails"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintVertical_bias="0.0" />
+
+
+        </android.support.constraint.ConstraintLayout>
+
+    </LinearLayout>
+
+
+</android.support.v4.widget.SwipeRefreshLayout>
